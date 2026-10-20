@@ -1,0 +1,11 @@
+{
+  "model": "heart-disease-logistic-regression",
+  "prediction": {
+    "class_id": 1,
+    "class_label": "Recorded heart disease present",
+    "positive_class_score": 0.5591060693708545,
+    "threshold": 0.5,
+    "score_semantics": "uncalibrated_experimental_model_score"
+  },
+  "disclaimer": "Experimental research output. Not a medical diagnosis or clinically calibrated risk estimate."
+}

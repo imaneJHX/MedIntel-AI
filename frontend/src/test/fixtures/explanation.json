@@ -1,0 +1,279 @@
+{
+  "model": "heart-disease-logistic-regression",
+  "prediction": {
+    "class_id": 1,
+    "class_label": "Recorded heart disease present",
+    "positive_class_score": 0.5591060693708545,
+    "threshold": 0.5,
+    "score_semantics": "uncalibrated_experimental_model_score"
+  },
+  "disclaimer": "Experimental research output. Not a medical diagnosis or clinically calibrated risk estimate.",
+  "explanation": {
+    "units": "positive-class log-odds",
+    "baseline_log_odds": 0.008865224204336043,
+    "model_output_log_odds": 0.23753487718050437,
+    "reconstructed_log_odds": 0.2375348771805037,
+    "max_reconstruction_error": 6.661338147750939e-16,
+    "background_records": 242,
+    "input_values": {
+      "age": 55.0,
+      "sex": 1,
+      "cp": 4,
+      "trestbps": 140.0,
+      "chol": 240.0,
+      "fbs": 0,
+      "restecg": 0,
+      "thalach": 150.0,
+      "exang": 0,
+      "oldpeak": 1.0,
+      "slope": 2,
+      "ca": 0,
+      "thal": 3
+    },
+    "feature_contributions": [
+      {
+        "feature": "numeric__age",
+        "original_feature": "age",
+        "category": null,
+        "transformed_value": 0.050166465005133255,
+        "contribution_log_odds": -0.002787223353323492
+      },
+      {
+        "feature": "numeric__trestbps",
+        "original_feature": "trestbps",
+        "category": null,
+        "transformed_value": 0.514117442576676,
+        "contribution_log_odds": 0.17617965158433918
+      },
+      {
+        "feature": "numeric__chol",
+        "original_feature": "chol",
+        "category": null,
+        "transformed_value": -0.18656232521760918,
+        "contribution_log_odds": -0.03490226293661828
+      },
+      {
+        "feature": "numeric__thalach",
+        "original_feature": "thalach",
+        "category": null,
+        "transformed_value": 0.00164270578120802,
+        "contribution_log_odds": -0.0006399151893927083
+      },
+      {
+        "feature": "numeric__oldpeak",
+        "original_feature": "oldpeak",
+        "category": null,
+        "transformed_value": 0.0007374916045124783,
+        "contribution_log_odds": 0.00018178515305971205
+      },
+      {
+        "feature": "categorical__sex_0.0",
+        "original_feature": "sex",
+        "category": 0.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": 0.22220466737663588
+      },
+      {
+        "feature": "categorical__sex_1.0",
+        "original_feature": "sex",
+        "category": 1.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": 0.2264294311060362
+      },
+      {
+        "feature": "categorical__cp_1.0",
+        "original_feature": "cp",
+        "category": 1.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": 0.04653731884300887
+      },
+      {
+        "feature": "categorical__cp_2.0",
+        "original_feature": "cp",
+        "category": 2.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": -0.0247977722050478
+      },
+      {
+        "feature": "categorical__cp_3.0",
+        "original_feature": "cp",
+        "category": 3.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": 0.15127923667522877
+      },
+      {
+        "feature": "categorical__cp_4.0",
+        "original_feature": "cp",
+        "category": 4.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": 0.5346893196770849
+      },
+      {
+        "feature": "categorical__fbs_0.0",
+        "original_feature": "fbs",
+        "category": 0.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": 0.016703149013832692
+      },
+      {
+        "feature": "categorical__fbs_1.0",
+        "original_feature": "fbs",
+        "category": 1.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": 0.014782801864105221
+      },
+      {
+        "feature": "categorical__restecg_0.0",
+        "original_feature": "restecg",
+        "category": 0.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": -0.06805837029241377
+      },
+      {
+        "feature": "categorical__restecg_1.0",
+        "original_feature": "restecg",
+        "category": 1.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": 0.00027830313984793616
+      },
+      {
+        "feature": "categorical__restecg_2.0",
+        "original_feature": "restecg",
+        "category": 2.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": -0.10680053496403516
+      },
+      {
+        "feature": "categorical__exang_0.0",
+        "original_feature": "exang",
+        "category": 0.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": -0.08292385020012433
+      },
+      {
+        "feature": "categorical__exang_1.0",
+        "original_feature": "exang",
+        "category": 1.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": -0.08725834805236636
+      },
+      {
+        "feature": "categorical__slope_1.0",
+        "original_feature": "slope",
+        "category": 1.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": 0.20446591765230634
+      },
+      {
+        "feature": "categorical__slope_2.0",
+        "original_feature": "slope",
+        "category": 2.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": 0.3295677953895798
+      },
+      {
+        "feature": "categorical__slope_3.0",
+        "original_feature": "slope",
+        "category": 3.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": 0.010867543041391639
+      },
+      {
+        "feature": "categorical__ca_0.0",
+        "original_feature": "ca",
+        "category": 0.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": -0.578085404487546
+      },
+      {
+        "feature": "categorical__ca_1.0",
+        "original_feature": "ca",
+        "category": 1.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": -0.0759340583547691
+      },
+      {
+        "feature": "categorical__ca_2.0",
+        "original_feature": "ca",
+        "category": 2.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": -0.07847381439150312
+      },
+      {
+        "feature": "categorical__ca_3.0",
+        "original_feature": "ca",
+        "category": 3.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": -0.024792001297670847
+      },
+      {
+        "feature": "categorical__thal_3.0",
+        "original_feature": "thal",
+        "category": 3.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": -0.2288619496591885
+      },
+      {
+        "feature": "categorical__thal_6.0",
+        "original_feature": "thal",
+        "category": 6.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": 0.013207499201123286
+      },
+      {
+        "feature": "categorical__thal_7.0",
+        "original_feature": "thal",
+        "category": 7.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": -0.32438926135741314
+      }
+    ],
+    "top_positive_contributors": [
+      {
+        "feature": "categorical__cp_4.0",
+        "original_feature": "cp",
+        "category": 4.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": 0.5346893196770849
+      },
+      {
+        "feature": "categorical__slope_2.0",
+        "original_feature": "slope",
+        "category": 2.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": 0.3295677953895798
+      },
+      {
+        "feature": "categorical__sex_1.0",
+        "original_feature": "sex",
+        "category": 1.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": 0.2264294311060362
+      }
+    ],
+    "top_negative_contributors": [
+      {
+        "feature": "categorical__ca_0.0",
+        "original_feature": "ca",
+        "category": 0.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": -0.578085404487546
+      },
+      {
+        "feature": "categorical__thal_7.0",
+        "original_feature": "thal",
+        "category": 7.0,
+        "transformed_value": 0.0,
+        "contribution_log_odds": -0.32438926135741314
+      },
+      {
+        "feature": "categorical__thal_3.0",
+        "original_feature": "thal",
+        "category": 3.0,
+        "transformed_value": 1.0,
+        "contribution_log_odds": -0.2288619496591885
+      }
+    ],
+    "interpretation": "Positive contributions increase class-1 log-odds relative to the training background; negative contributions decrease them. These are model associations, not probability changes or disease causes."
+  }
+}

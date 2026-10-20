@@ -1,0 +1,48 @@
+{
+  "language": "en",
+  "generation_method": "deterministic",
+  "knowledge_version": "lab-education-1",
+  "fallback_used": false,
+  "counts": {
+    "reviewed": 1,
+    "below_reported_interval": 1,
+    "within_reported_interval": 0,
+    "above_reported_interval": 0,
+    "not_evaluated": 0
+  },
+  "summary": "This synthetic demonstration report contains 1 transcription-reviewed measurements: 1 below, 0 within, 0 above their printed intervals, and 0 not evaluated. These counts are not a health assessment.",
+  "measurement_explanations": [
+    {
+      "measurement_id": "measurement-1",
+      "analyte": "hemoglobin",
+      "name": "Hemoglobin",
+      "source_name": "Hemoglobin",
+      "value": 11.2,
+      "unit": "g/dL",
+      "reference_range": {
+        "lower": 12.0,
+        "upper": 16.0,
+        "lower_inclusive": true,
+        "upper_inclusive": true,
+        "unit": "g/dL",
+        "raw_text": "User-reviewed bounds"
+      },
+      "comparison": "below_reported_interval",
+      "user_corrected": false,
+      "definition": "Hemoglobin is an oxygen-carrying protein in red blood cells. This explanation does not interpret an individual result.",
+      "explanation": "Hemoglobin is an oxygen-carrying protein in red blood cells. This explanation does not interpret an individual result. Reviewed demonstration value: 11.2 g/dL. Printed reference interval: >= 12.0 ; <= 16.0 g/dL. The value is below the printed reference interval. A printed interval comparison alone does not establish a diagnosis. The full report and clinical context matter.",
+      "source_measurement_ids": ["measurement-1"],
+      "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-test/"
+    }
+  ],
+  "questions_for_doctor": [
+    {
+      "text": "What context and other information would help a healthcare professional interpret the Hemoglobin measurement in the full report?",
+      "source_measurement_ids": ["measurement-1"]
+    }
+  ],
+  "warnings": [
+    "Reviewed means the user confirmed the transcription, not that a clinician or laboratory validated it. Only reviewed measurements are included."
+  ],
+  "disclaimer": "Educational synthetic demonstration only. Not a medical diagnosis, health assessment, disease probability, treatment recommendation or emergency triage service."
+}

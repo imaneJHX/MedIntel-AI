@@ -1,0 +1,48 @@
+{
+  "language": "fr",
+  "generation_method": "deterministic",
+  "knowledge_version": "lab-education-1",
+  "fallback_used": false,
+  "counts": {
+    "reviewed": 1,
+    "below_reported_interval": 1,
+    "within_reported_interval": 0,
+    "above_reported_interval": 0,
+    "not_evaluated": 0
+  },
+  "summary": "Ce rapport fictif de démonstration contient 1 mesures dont la transcription a été confirmée : 1 en dessous, 0 dans, 0 au-dessus de leur intervalle imprimé, et 0 non évaluées. Ces nombres ne constituent pas une évaluation de santé.",
+  "measurement_explanations": [
+    {
+      "measurement_id": "measurement-1",
+      "analyte": "hemoglobin",
+      "name": "Hémoglobine",
+      "source_name": "Hemoglobin",
+      "value": 11.2,
+      "unit": "g/dL",
+      "reference_range": {
+        "lower": 12.0,
+        "upper": 16.0,
+        "lower_inclusive": true,
+        "upper_inclusive": true,
+        "unit": "g/dL",
+        "raw_text": "User-reviewed bounds"
+      },
+      "comparison": "below_reported_interval",
+      "user_corrected": false,
+      "definition": "L’hémoglobine est une protéine des globules rouges qui transporte l’oxygène.",
+      "explanation": "L’hémoglobine est une protéine des globules rouges qui transporte l’oxygène. Valeur de démonstration relue : 11.2 g/dL. Intervalle de référence imprimé : >= 12.0 ; <= 16.0 g/dL. La valeur est en dessous de l’intervalle de référence imprimé. La comparaison à un intervalle imprimé ne suffit pas à établir un diagnostic. Le rapport complet et le contexte clinique comptent.",
+      "source_measurement_ids": ["measurement-1"],
+      "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-test/"
+    }
+  ],
+  "questions_for_doctor": [
+    {
+      "text": "Quel contexte et quelles autres informations aideraient un professionnel de santé à comprendre la mesure « Hémoglobine » dans le rapport complet ?",
+      "source_measurement_ids": ["measurement-1"]
+    }
+  ],
+  "warnings": [
+    "La confirmation concerne la transcription par l’utilisateur, pas une validation médicale ou du laboratoire. Seules les mesures relues sont incluses."
+  ],
+  "disclaimer": "Démonstration fictive à visée éducative uniquement. Ne fournit ni diagnostic, ni évaluation de santé, ni probabilité de maladie, ni recommandation de traitement, ni triage d’urgence."
+}

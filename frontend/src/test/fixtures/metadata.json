@@ -1,0 +1,47 @@
+{
+  "model": "heart-disease-logistic-regression",
+  "algorithm": "Logistic Regression",
+  "dataset": "UCI Heart Disease - processed Cleveland",
+  "dataset_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data",
+  "input_features": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "transformed_feature_count": 28,
+  "class_labels": {
+    "0": "Recorded heart disease absent",
+    "1": "Recorded heart disease present"
+  },
+  "artifact_sha256": "82ebbcac02ce7dafd841f1f44d477b758ad05124f7f2b767b9fc8bae07546f4a",
+  "threshold": 0.5,
+  "research_only": true,
+  "evaluation_records": 61,
+  "experimental_holdout_metrics": {
+    "accuracy": 0.8688524590163934,
+    "precision": 0.8125,
+    "recall": 0.9285714285714286,
+    "f1": 0.8666666666666667,
+    "roc_auc": 0.9664502164502166,
+    "sensitivity": 0.9285714285714286,
+    "specificity": 0.8181818181818182,
+    "brier_score": 0.08319487694332521
+  },
+  "limitations": [
+    "Experimental metrics from 61 historical holdout records; not validated clinical performance.",
+    "Earlier EDA inspected the full cohort; no independent external validation.",
+    "Scores are uncalibrated model outputs, not real-world disease probabilities.",
+    "Diagnostic features may be unavailable at a proposed decision time."
+  ],
+  "disclaimer": "Experimental research output. Not a medical diagnosis or clinically calibrated risk estimate."
+}

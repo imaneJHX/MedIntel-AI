@@ -1,0 +1,1272 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MedIntel AI Research API",
+    "description": "Local educational research API. Outputs describe recorded disease classification, not medical diagnoses or clinically calibrated risk.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/health": {
+      "get": {
+        "tags": ["Health"],
+        "summary": "Process liveness",
+        "operationId": "health_api_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Malformed request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported body format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid feature input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error, details suppressed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Inference resources unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ready": {
+      "get": {
+        "tags": ["Health"],
+        "summary": "Model and SHAP readiness",
+        "operationId": "ready_api_v1_ready_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadyResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Malformed request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported body format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid feature input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error, details suppressed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Inference resources unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/models/heart-disease": {
+      "get": {
+        "tags": ["Model"],
+        "summary": "Frozen model provenance and experimental metrics",
+        "operationId": "model_info_api_v1_models_heart_disease_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelMetadata"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Malformed request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported body format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid feature input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error, details suppressed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Inference resources unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/models/heart-disease/schema": {
+      "get": {
+        "tags": ["Model"],
+        "summary": "Required field names, support limits, and category options",
+        "operationId": "input_schema_api_v1_models_heart_disease_schema_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InputSchemaResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Malformed request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported body format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid feature input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error, details suppressed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Inference resources unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/predict/heart-disease": {
+      "post": {
+        "tags": ["Prediction"],
+        "summary": "Classify recorded disease presence (research only)",
+        "operationId": "predict_api_v1_predict_heart_disease_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HeartRecord"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Malformed request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported body format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid feature input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error, details suppressed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Inference resources unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/explain/heart-disease": {
+      "post": {
+        "tags": ["Explanation"],
+        "summary": "Explain one frozen-model output in log-odds",
+        "operationId": "explain_api_v1_explain_heart_disease_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HeartRecord"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExplanationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Malformed request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported body format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid feature input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error, details suppressed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Inference resources unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CategoryOption": {
+        "properties": {
+          "value": {
+            "type": "integer",
+            "title": "Value"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          }
+        },
+        "type": "object",
+        "required": ["value", "label"],
+        "title": "CategoryOption"
+      },
+      "ErrorBody": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "details": {
+            "items": {
+              "$ref": "#/components/schemas/ErrorDetail"
+            },
+            "type": "array",
+            "title": "Details"
+          }
+        },
+        "type": "object",
+        "required": ["code", "message"],
+        "title": "ErrorBody"
+      },
+      "ErrorDetail": {
+        "properties": {
+          "field": {
+            "type": "string",
+            "title": "Field"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": ["field", "code", "message"],
+        "title": "ErrorDetail"
+      },
+      "ErrorResponse": {
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorBody"
+          }
+        },
+        "type": "object",
+        "required": ["error"],
+        "title": "ErrorResponse"
+      },
+      "Explanation": {
+        "properties": {
+          "units": {
+            "type": "string",
+            "const": "positive-class log-odds",
+            "title": "Units"
+          },
+          "baseline_log_odds": {
+            "type": "number",
+            "title": "Baseline Log Odds"
+          },
+          "model_output_log_odds": {
+            "type": "number",
+            "title": "Model Output Log Odds"
+          },
+          "reconstructed_log_odds": {
+            "type": "number",
+            "title": "Reconstructed Log Odds"
+          },
+          "max_reconstruction_error": {
+            "type": "number",
+            "title": "Max Reconstruction Error"
+          },
+          "background_records": {
+            "type": "integer",
+            "title": "Background Records"
+          },
+          "input_values": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Input Values"
+          },
+          "feature_contributions": {
+            "items": {
+              "$ref": "#/components/schemas/FeatureContribution"
+            },
+            "type": "array",
+            "title": "Feature Contributions"
+          },
+          "top_positive_contributors": {
+            "items": {
+              "$ref": "#/components/schemas/FeatureContribution"
+            },
+            "type": "array",
+            "title": "Top Positive Contributors"
+          },
+          "top_negative_contributors": {
+            "items": {
+              "$ref": "#/components/schemas/FeatureContribution"
+            },
+            "type": "array",
+            "title": "Top Negative Contributors"
+          },
+          "interpretation": {
+            "type": "string",
+            "title": "Interpretation"
+          }
+        },
+        "type": "object",
+        "required": [
+          "units",
+          "baseline_log_odds",
+          "model_output_log_odds",
+          "reconstructed_log_odds",
+          "max_reconstruction_error",
+          "background_records",
+          "input_values",
+          "feature_contributions",
+          "top_positive_contributors",
+          "top_negative_contributors",
+          "interpretation"
+        ],
+        "title": "Explanation"
+      },
+      "ExplanationResponse": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "const": "heart-disease-logistic-regression",
+            "title": "Model",
+            "default": "heart-disease-logistic-regression"
+          },
+          "prediction": {
+            "$ref": "#/components/schemas/Prediction"
+          },
+          "disclaimer": {
+            "type": "string",
+            "title": "Disclaimer",
+            "default": "Experimental research output. Not a medical diagnosis or clinically calibrated risk estimate."
+          },
+          "explanation": {
+            "$ref": "#/components/schemas/Explanation"
+          }
+        },
+        "type": "object",
+        "required": ["prediction", "explanation"],
+        "title": "ExplanationResponse"
+      },
+      "FeatureContribution": {
+        "properties": {
+          "feature": {
+            "type": "string",
+            "title": "Feature"
+          },
+          "original_feature": {
+            "type": "string",
+            "title": "Original Feature"
+          },
+          "category": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Category"
+          },
+          "transformed_value": {
+            "type": "number",
+            "title": "Transformed Value"
+          },
+          "contribution_log_odds": {
+            "type": "number",
+            "title": "Contribution Log Odds"
+          }
+        },
+        "type": "object",
+        "required": [
+          "feature",
+          "original_feature",
+          "category",
+          "transformed_value",
+          "contribution_log_odds"
+        ],
+        "title": "FeatureContribution"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "ok",
+            "title": "Status",
+            "default": "ok"
+          },
+          "service": {
+            "type": "string",
+            "const": "MedIntel AI",
+            "title": "Service",
+            "default": "MedIntel AI"
+          },
+          "version": {
+            "type": "string",
+            "const": "1.0.0",
+            "title": "Version",
+            "default": "1.0.0"
+          }
+        },
+        "type": "object",
+        "title": "HealthResponse"
+      },
+      "HeartRecord": {
+        "properties": {
+          "age": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 77.0,
+                "minimum": 29.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Age",
+            "description": "Age at observation.",
+            "nullable": true,
+            "range_semantics": "Observed training support; not medical normality.",
+            "unit": "years"
+          },
+          "sex": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "enum": [0, 1, null],
+            "title": "Recorded sex",
+            "description": "Sex coding in the historical UCI source.",
+            "nullable": true
+          },
+          "cp": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "enum": [1, 2, 3, 4, null],
+            "title": "Chest-pain type",
+            "description": "Original UCI chest-pain category.",
+            "nullable": true
+          },
+          "trestbps": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 200.0,
+                "minimum": 94.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resting blood pressure",
+            "description": "Resting blood pressure recorded on hospital admission.",
+            "nullable": true,
+            "range_semantics": "Observed training support; not medical normality.",
+            "unit": "mm Hg"
+          },
+          "chol": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 564.0,
+                "minimum": 126.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Serum cholesterol",
+            "description": "Recorded serum cholesterol.",
+            "nullable": true,
+            "range_semantics": "Observed training support; not medical normality.",
+            "unit": "mg/dL"
+          },
+          "fbs": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "enum": [0, 1, null],
+            "title": "Fasting blood sugar indicator",
+            "description": "Dataset indicator for fasting blood sugar above 120 mg/dL; this is a source definition, not a recommendation.",
+            "nullable": true
+          },
+          "restecg": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "enum": [0, 1, 2, null],
+            "title": "Resting ECG",
+            "description": "Original resting ECG result code.",
+            "nullable": true
+          },
+          "thalach": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 202.0,
+                "minimum": 71.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Maximum heart rate",
+            "description": "Maximum heart rate achieved.",
+            "nullable": true,
+            "range_semantics": "Observed training support; not medical normality.",
+            "unit": "beats/min"
+          },
+          "exang": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "enum": [0, 1, null],
+            "title": "Exercise-induced angina",
+            "description": "Recorded exercise-angina indicator.",
+            "nullable": true
+          },
+          "oldpeak": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 6.2,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exercise ST depression",
+            "description": "ST depression relative to rest; the UCI field documentation does not specify units.",
+            "nullable": true,
+            "range_semantics": "Observed training support; not medical normality."
+          },
+          "slope": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "enum": [1, 2, 3, null],
+            "title": "Peak exercise ST slope",
+            "description": "Original ST-segment slope category.",
+            "nullable": true
+          },
+          "ca": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "enum": [0, 1, 2, 3, null],
+            "title": "Major vessels visualized",
+            "description": "Major vessels visualized by fluoroscopy, treated as a discrete category.",
+            "nullable": true,
+            "unit": "count"
+          },
+          "thal": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "enum": [3, 6, 7, null],
+            "title": "Thallium-test result",
+            "description": "Original test-result code; not a thalassemia diagnosis.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "age",
+          "sex",
+          "cp",
+          "trestbps",
+          "chol",
+          "fbs",
+          "restecg",
+          "thalach",
+          "exang",
+          "oldpeak",
+          "slope",
+          "ca",
+          "thal"
+        ],
+        "title": "HeartRecord",
+        "description": "All keys are required; explicit nulls use the frozen training-fitted imputer.",
+        "examples": [
+          {
+            "age": 55,
+            "ca": 0,
+            "chol": 240,
+            "cp": 4,
+            "exang": 0,
+            "fbs": 0,
+            "oldpeak": 1.0,
+            "restecg": 0,
+            "sex": 1,
+            "slope": 2,
+            "thal": 3,
+            "thalach": 150,
+            "trestbps": 140
+          }
+        ]
+      },
+      "InputField": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["number", "integer"],
+            "title": "Type"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "required": {
+            "type": "boolean",
+            "title": "Required"
+          },
+          "nullable": {
+            "type": "boolean",
+            "title": "Nullable"
+          },
+          "minimum": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Minimum"
+          },
+          "maximum": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Maximum"
+          },
+          "options": {
+            "items": {
+              "$ref": "#/components/schemas/CategoryOption"
+            },
+            "type": "array",
+            "title": "Options"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "label",
+          "type",
+          "unit",
+          "description",
+          "required",
+          "nullable",
+          "minimum",
+          "maximum",
+          "options"
+        ],
+        "title": "InputField"
+      },
+      "InputSchemaResponse": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "fields": {
+            "items": {
+              "$ref": "#/components/schemas/InputField"
+            },
+            "type": "array",
+            "title": "Fields"
+          },
+          "numeric_range_semantics": {
+            "type": "string",
+            "title": "Numeric Range Semantics"
+          },
+          "missing_value_policy": {
+            "type": "string",
+            "title": "Missing Value Policy"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model",
+          "fields",
+          "numeric_range_semantics",
+          "missing_value_policy"
+        ],
+        "title": "InputSchemaResponse"
+      },
+      "ModelMetadata": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "algorithm": {
+            "type": "string",
+            "title": "Algorithm"
+          },
+          "dataset": {
+            "type": "string",
+            "title": "Dataset"
+          },
+          "dataset_url": {
+            "type": "string",
+            "title": "Dataset Url"
+          },
+          "input_features": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Input Features"
+          },
+          "transformed_feature_count": {
+            "type": "integer",
+            "title": "Transformed Feature Count"
+          },
+          "class_labels": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Class Labels"
+          },
+          "artifact_sha256": {
+            "type": "string",
+            "title": "Artifact Sha256"
+          },
+          "threshold": {
+            "type": "number",
+            "title": "Threshold"
+          },
+          "research_only": {
+            "type": "boolean",
+            "title": "Research Only"
+          },
+          "evaluation_records": {
+            "type": "integer",
+            "title": "Evaluation Records"
+          },
+          "experimental_holdout_metrics": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Experimental Holdout Metrics"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          },
+          "disclaimer": {
+            "type": "string",
+            "title": "Disclaimer",
+            "default": "Experimental research output. Not a medical diagnosis or clinically calibrated risk estimate."
+          }
+        },
+        "type": "object",
+        "required": [
+          "model",
+          "algorithm",
+          "dataset",
+          "dataset_url",
+          "input_features",
+          "transformed_feature_count",
+          "class_labels",
+          "artifact_sha256",
+          "threshold",
+          "research_only",
+          "evaluation_records",
+          "experimental_holdout_metrics",
+          "limitations"
+        ],
+        "title": "ModelMetadata"
+      },
+      "Prediction": {
+        "properties": {
+          "class_id": {
+            "type": "integer",
+            "enum": [0, 1],
+            "title": "Class Id"
+          },
+          "class_label": {
+            "type": "string",
+            "title": "Class Label"
+          },
+          "positive_class_score": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Positive Class Score",
+            "description": "Uncalibrated model output for class 1; not a real-world disease probability."
+          },
+          "threshold": {
+            "type": "number",
+            "exclusiveMaximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Threshold"
+          },
+          "score_semantics": {
+            "type": "string",
+            "const": "uncalibrated_experimental_model_score",
+            "title": "Score Semantics",
+            "default": "uncalibrated_experimental_model_score"
+          }
+        },
+        "type": "object",
+        "required": [
+          "class_id",
+          "class_label",
+          "positive_class_score",
+          "threshold"
+        ],
+        "title": "Prediction"
+      },
+      "PredictionResponse": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "const": "heart-disease-logistic-regression",
+            "title": "Model",
+            "default": "heart-disease-logistic-regression"
+          },
+          "prediction": {
+            "$ref": "#/components/schemas/Prediction"
+          },
+          "disclaimer": {
+            "type": "string",
+            "title": "Disclaimer",
+            "default": "Experimental research output. Not a medical diagnosis or clinically calibrated risk estimate."
+          }
+        },
+        "type": "object",
+        "required": ["prediction"],
+        "title": "PredictionResponse"
+      },
+      "ReadyResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "ready",
+            "title": "Status",
+            "default": "ready"
+          },
+          "model_loaded": {
+            "type": "boolean",
+            "title": "Model Loaded",
+            "default": true
+          },
+          "explainer_initialized": {
+            "type": "boolean",
+            "title": "Explainer Initialized",
+            "default": true
+          }
+        },
+        "type": "object",
+        "title": "ReadyResponse"
+      }
+    }
+  }
+}

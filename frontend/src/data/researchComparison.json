@@ -1,0 +1,61 @@
+{
+  "source": "reports/metrics/cv_summary.csv",
+  "source_sha256": "1fe3f3127bbf98f45c8196e01062485ca4bd7c4d385a914f83ee452dfed268f7",
+  "experiment_sha256": "5d0cae03668ccb707d52e01e8524a151a62efb52adfb31c80c3da19f33234f61",
+  "models": [
+    {
+      "model": "Logistic Regression",
+      "accuracy_mean": 0.8551870748299321,
+      "accuracy_std": 0.026573299319183667,
+      "precision_mean": 0.8730744935655421,
+      "precision_std": 0.06939623354095026,
+      "recall_mean": 0.8098814229249012,
+      "recall_std": 0.06889272504815898,
+      "f1_mean": 0.8365444245676803,
+      "f1_std": 0.028516807105781045,
+      "roc_auc_mean": 0.9024779568257829,
+      "roc_auc_std": 0.016551023412343543,
+      "brier_score_mean": 0.12150484148639167,
+      "brier_score_std": 0.008145988017323486,
+      "train_accuracy_mean": 0.865701618503285,
+      "train_roc_auc_mean": 0.9341492402728357,
+      "accuracy_gap": 0.010514543673352916
+    },
+    {
+      "model": "Random Forest",
+      "accuracy_mean": 0.8055272108843538,
+      "accuracy_std": 0.03318043119311089,
+      "precision_mean": 0.8016300085251491,
+      "precision_std": 0.07948095366124554,
+      "recall_mean": 0.7826086956521738,
+      "recall_std": 0.0888778925761615,
+      "f1_mean": 0.7861487543189671,
+      "f1_std": 0.03435718482835578,
+      "roc_auc_mean": 0.9002314111009764,
+      "roc_auc_std": 0.03273065295984427,
+      "brier_score_mean": 0.13266746538861846,
+      "brier_score_std": 0.009714973421976206,
+      "train_accuracy_mean": 0.886378932749319,
+      "train_roc_auc_mean": 0.9634644007677716,
+      "accuracy_gap": 0.08085172186496525
+    },
+    {
+      "model": "XGBoost",
+      "accuracy_mean": 0.7933673469387755,
+      "accuracy_std": 0.029554672103712203,
+      "precision_mean": 0.7802750582750583,
+      "precision_std": 0.05776655625766632,
+      "recall_mean": 0.774308300395257,
+      "recall_std": 0.0731946018066306,
+      "f1_mean": 0.774025974025974,
+      "f1_std": 0.034079311570896345,
+      "roc_auc_mean": 0.883967883967884,
+      "roc_auc_std": 0.02649330221328441,
+      "brier_score_mean": 0.13530074059963226,
+      "brier_score_std": 0.01669546056405917,
+      "train_accuracy_mean": 0.892559158164628,
+      "train_roc_auc_mean": 0.9685944953922483,
+      "accuracy_gap": 0.09919181122585252
+    }
+  ]
+}

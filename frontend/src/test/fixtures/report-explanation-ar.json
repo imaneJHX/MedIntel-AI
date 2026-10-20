@@ -1,0 +1,48 @@
+{
+  "language": "ar",
+  "generation_method": "deterministic",
+  "knowledge_version": "lab-education-1",
+  "fallback_used": false,
+  "counts": {
+    "reviewed": 1,
+    "below_reported_interval": 1,
+    "within_reported_interval": 0,
+    "above_reported_interval": 0,
+    "not_evaluated": 0
+  },
+  "summary": "يحتوي هذا التقرير الاصطناعي التجريبي على 1 قياسات تمت مراجعة نسخها: 1 أقل من المجالات المرجعية المطبوعة، و0 ضمنها، و0 أعلى منها، و0 لم تُقيّم. هذه الأعداد ليست تقييماً صحياً.",
+  "measurement_explanations": [
+    {
+      "measurement_id": "measurement-1",
+      "analyte": "hemoglobin",
+      "name": "الهيموغلوبين",
+      "source_name": "Hemoglobin",
+      "value": 11.2,
+      "unit": "g/dL",
+      "reference_range": {
+        "lower": 12.0,
+        "upper": 16.0,
+        "lower_inclusive": true,
+        "upper_inclusive": true,
+        "unit": "g/dL",
+        "raw_text": "User-reviewed bounds"
+      },
+      "comparison": "below_reported_interval",
+      "user_corrected": false,
+      "definition": "الهيموغلوبين بروتين في خلايا الدم الحمراء يساعد على نقل الأكسجين.",
+      "explanation": "الهيموغلوبين بروتين في خلايا الدم الحمراء يساعد على نقل الأكسجين. القيمة التجريبية التي تمت مراجعتها: 11.2 g/dL. المجال المرجعي المطبوع: >= 12.0 ; <= 16.0 g/dL. القيمة أقل من المجال المرجعي المطبوع. المقارنة بالمجال المطبوع وحدها لا تثبت تشخيصاً طبياً. التقرير الكامل والسياق السريري مهمان.",
+      "source_measurement_ids": ["measurement-1"],
+      "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-test/"
+    }
+  ],
+  "questions_for_doctor": [
+    {
+      "text": "ما السياق والمعلومات الأخرى التي تساعد المختص الصحي على فهم قياس «الهيموغلوبين» ضمن التقرير الكامل؟",
+      "source_measurement_ids": ["measurement-1"]
+    }
+  ],
+  "warnings": [
+    "المراجعة تعني أن المستخدم أكد النسخ، ولا تعني اعتماداً من طبيب أو مختبر. تُدرج القياسات التي تمت مراجعتها فقط."
+  ],
+  "disclaimer": "عرض اصطناعي تجريبي للتثقيف فقط. لا يقدم تشخيصاً طبياً أو تقييماً صحياً أو احتمال مرض أو توصية علاجية أو فرزاً للحالات الطارئة."
+}

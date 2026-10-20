@@ -1,0 +1,6 @@
+"""Public, fixed document-processing errors; never include document contents."""
+
+class ReportError(Exception):
+    def __init__(self, code: str, message: str, status: int = 422):
+        self.code, self.message, self.status = code, message, status
+        super().__init__(code)

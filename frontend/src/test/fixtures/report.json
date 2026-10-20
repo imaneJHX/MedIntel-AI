@@ -1,0 +1,136 @@
+{
+  "document_type": "synthetic_laboratory_report",
+  "filename": "synthetic-report.pdf",
+  "page_count": 1,
+  "extraction_method": "embedded_text",
+  "measurements": [
+    {
+      "id": "measurement-1",
+      "analyte": "hemoglobin",
+      "name": "Hemoglobin",
+      "original_label": "Hemoglobin",
+      "value": 11.2,
+      "unit": "g/dL",
+      "reference_range": {
+        "lower": 12.0,
+        "upper": 16.0,
+        "lower_inclusive": true,
+        "upper_inclusive": true,
+        "unit": "g/dL",
+        "raw_text": "12.0 - 16.0"
+      },
+      "source_text": "Hemoglobin | 11.2 | g/dL | 12.0 - 16.0",
+      "extraction_confidence": null,
+      "extraction_status": "parsed",
+      "status": "below_reported_interval",
+      "review_required": true,
+      "warnings": []
+    },
+    {
+      "id": "measurement-2",
+      "analyte": "wbc",
+      "name": "White blood cell count",
+      "original_label": "WBC",
+      "value": 6.4,
+      "unit": "10^9/L",
+      "reference_range": {
+        "lower": 4.0,
+        "upper": 11.0,
+        "lower_inclusive": true,
+        "upper_inclusive": true,
+        "unit": "10^9/L",
+        "raw_text": "4.0 - 11.0"
+      },
+      "source_text": "WBC | 6.4 | 10^9/L | 4.0 - 11.0",
+      "extraction_confidence": null,
+      "extraction_status": "parsed",
+      "status": "within_reported_interval",
+      "review_required": true,
+      "warnings": []
+    },
+    {
+      "id": "measurement-3",
+      "analyte": "platelets",
+      "name": "Platelet count",
+      "original_label": "Platelet count",
+      "value": 450.0,
+      "unit": "10^9/L",
+      "reference_range": {
+        "lower": 150.0,
+        "upper": 400.0,
+        "lower_inclusive": true,
+        "upper_inclusive": true,
+        "unit": "10^9/L",
+        "raw_text": "150 - 400"
+      },
+      "source_text": "Platelet count | 450 | 10^9/L | 150 - 400",
+      "extraction_confidence": null,
+      "extraction_status": "parsed",
+      "status": "above_reported_interval",
+      "review_required": true,
+      "warnings": []
+    }
+  ],
+  "education": [
+    {
+      "analyte": "hemoglobin",
+      "name": "Hemoglobin",
+      "explanation": "Hemoglobin is an oxygen-carrying protein in red blood cells. This explanation does not interpret an individual result.",
+      "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-test/"
+    },
+    {
+      "analyte": "glucose",
+      "name": "Blood glucose",
+      "explanation": "Glucose is a sugar used for energy. Test timing and sample context matter when discussing a measurement.",
+      "source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/"
+    },
+    {
+      "analyte": "total_cholesterol",
+      "name": "Total cholesterol",
+      "explanation": "A lipid panel reports several blood fat measurements. Total cholesterol is one part of that panel.",
+      "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/"
+    },
+    {
+      "analyte": "hdl",
+      "name": "HDL cholesterol",
+      "explanation": "HDL is one cholesterol measurement in a lipid panel. Its meaning needs context alongside other measurements.",
+      "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/"
+    },
+    {
+      "analyte": "ldl",
+      "name": "LDL cholesterol",
+      "explanation": "LDL is another cholesterol measurement in a lipid panel. This tool does not evaluate personal cardiovascular risk.",
+      "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/"
+    },
+    {
+      "analyte": "triglycerides",
+      "name": "Triglycerides",
+      "explanation": "Triglycerides are fats measured as part of many lipid panels. A reported interval is specific to its document and context.",
+      "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/"
+    },
+    {
+      "analyte": "wbc",
+      "name": "White blood cell count",
+      "explanation": "This count measures white blood cells, which are part of the immune system. It cannot identify a condition on its own.",
+      "source_url": "https://medlineplus.gov/lab-tests/white-blood-count-wbc/"
+    },
+    {
+      "analyte": "platelets",
+      "name": "Platelet count",
+      "explanation": "Platelets help blood clot. A platelet count measures how many are in a blood sample.",
+      "source_url": "https://medlineplus.gov/lab-tests/platelet-tests/"
+    },
+    {
+      "analyte": "creatinine",
+      "name": "Creatinine",
+      "explanation": "Creatinine is a waste product measured in blood or urine tests. The sample type and other information matter for interpretation.",
+      "source_url": "https://medlineplus.gov/lab-tests/creatinine-test/"
+    }
+  ],
+  "warnings": [
+    "Every result needs manual transcription review; no confidence score is estimated.",
+    "A synthetic marker and acknowledgement cannot prove that a document contains no personal information."
+  ],
+  "retained": false,
+  "disclaimer": "Educational extraction only. Review the transcription. Not a medical diagnosis."
+}

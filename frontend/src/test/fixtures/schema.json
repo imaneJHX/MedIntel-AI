@@ -1,0 +1,263 @@
+{
+  "model": "heart-disease-logistic-regression",
+  "fields": [
+    {
+      "name": "age",
+      "label": "Age",
+      "type": "number",
+      "unit": "years",
+      "description": "Age at observation.",
+      "required": true,
+      "nullable": true,
+      "minimum": 29.0,
+      "maximum": 77.0,
+      "options": []
+    },
+    {
+      "name": "sex",
+      "label": "Recorded sex",
+      "type": "integer",
+      "unit": null,
+      "description": "Sex coding in the historical UCI source.",
+      "required": true,
+      "nullable": true,
+      "minimum": null,
+      "maximum": null,
+      "options": [
+        {
+          "value": 0,
+          "label": "Female"
+        },
+        {
+          "value": 1,
+          "label": "Male"
+        }
+      ]
+    },
+    {
+      "name": "cp",
+      "label": "Chest-pain type",
+      "type": "integer",
+      "unit": null,
+      "description": "Original UCI chest-pain category.",
+      "required": true,
+      "nullable": true,
+      "minimum": null,
+      "maximum": null,
+      "options": [
+        {
+          "value": 1,
+          "label": "Typical angina"
+        },
+        {
+          "value": 2,
+          "label": "Atypical angina"
+        },
+        {
+          "value": 3,
+          "label": "Non-anginal pain"
+        },
+        {
+          "value": 4,
+          "label": "Asymptomatic"
+        }
+      ]
+    },
+    {
+      "name": "trestbps",
+      "label": "Resting blood pressure",
+      "type": "number",
+      "unit": "mm Hg",
+      "description": "Resting blood pressure recorded on hospital admission.",
+      "required": true,
+      "nullable": true,
+      "minimum": 94.0,
+      "maximum": 200.0,
+      "options": []
+    },
+    {
+      "name": "chol",
+      "label": "Serum cholesterol",
+      "type": "number",
+      "unit": "mg/dL",
+      "description": "Recorded serum cholesterol.",
+      "required": true,
+      "nullable": true,
+      "minimum": 126.0,
+      "maximum": 564.0,
+      "options": []
+    },
+    {
+      "name": "fbs",
+      "label": "Fasting blood sugar indicator",
+      "type": "integer",
+      "unit": null,
+      "description": "Dataset indicator for fasting blood sugar above 120 mg/dL; this is a source definition, not a recommendation.",
+      "required": true,
+      "nullable": true,
+      "minimum": null,
+      "maximum": null,
+      "options": [
+        {
+          "value": 0,
+          "label": "False"
+        },
+        {
+          "value": 1,
+          "label": "True"
+        }
+      ]
+    },
+    {
+      "name": "restecg",
+      "label": "Resting ECG",
+      "type": "integer",
+      "unit": null,
+      "description": "Original resting ECG result code.",
+      "required": true,
+      "nullable": true,
+      "minimum": null,
+      "maximum": null,
+      "options": [
+        {
+          "value": 0,
+          "label": "Normal"
+        },
+        {
+          "value": 1,
+          "label": "ST-T abnormality"
+        },
+        {
+          "value": 2,
+          "label": "Probable/definite left ventricular hypertrophy"
+        }
+      ]
+    },
+    {
+      "name": "thalach",
+      "label": "Maximum heart rate",
+      "type": "number",
+      "unit": "beats/min",
+      "description": "Maximum heart rate achieved.",
+      "required": true,
+      "nullable": true,
+      "minimum": 71.0,
+      "maximum": 202.0,
+      "options": []
+    },
+    {
+      "name": "exang",
+      "label": "Exercise-induced angina",
+      "type": "integer",
+      "unit": null,
+      "description": "Recorded exercise-angina indicator.",
+      "required": true,
+      "nullable": true,
+      "minimum": null,
+      "maximum": null,
+      "options": [
+        {
+          "value": 0,
+          "label": "No"
+        },
+        {
+          "value": 1,
+          "label": "Yes"
+        }
+      ]
+    },
+    {
+      "name": "oldpeak",
+      "label": "Exercise ST depression",
+      "type": "number",
+      "unit": null,
+      "description": "ST depression relative to rest; the UCI field documentation does not specify units.",
+      "required": true,
+      "nullable": true,
+      "minimum": 0.0,
+      "maximum": 6.2,
+      "options": []
+    },
+    {
+      "name": "slope",
+      "label": "Peak exercise ST slope",
+      "type": "integer",
+      "unit": null,
+      "description": "Original ST-segment slope category.",
+      "required": true,
+      "nullable": true,
+      "minimum": null,
+      "maximum": null,
+      "options": [
+        {
+          "value": 1,
+          "label": "Upsloping"
+        },
+        {
+          "value": 2,
+          "label": "Flat"
+        },
+        {
+          "value": 3,
+          "label": "Downsloping"
+        }
+      ]
+    },
+    {
+      "name": "ca",
+      "label": "Major vessels visualized",
+      "type": "integer",
+      "unit": "count",
+      "description": "Major vessels visualized by fluoroscopy, treated as a discrete category.",
+      "required": true,
+      "nullable": true,
+      "minimum": null,
+      "maximum": null,
+      "options": [
+        {
+          "value": 0,
+          "label": "0"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        },
+        {
+          "value": 2,
+          "label": "2"
+        },
+        {
+          "value": 3,
+          "label": "3"
+        }
+      ]
+    },
+    {
+      "name": "thal",
+      "label": "Thallium-test result",
+      "type": "integer",
+      "unit": null,
+      "description": "Original test-result code; not a thalassemia diagnosis.",
+      "required": true,
+      "nullable": true,
+      "minimum": null,
+      "maximum": null,
+      "options": [
+        {
+          "value": 3,
+          "label": "Normal"
+        },
+        {
+          "value": 6,
+          "label": "Fixed defect"
+        },
+        {
+          "value": 7,
+          "label": "Reversible defect"
+        }
+      ]
+    }
+  ],
+  "numeric_range_semantics": "Observed training minima/maxima define this prototype's supported inputs; they are not medical normality thresholds.",
+  "missing_value_policy": "All 13 keys required; explicit nulls use training-fitted imputation. An entirely null record is rejected."
+}
